@@ -1,6 +1,11 @@
-import { Component, inject } from '@angular/core';
-import { TurmaService } from '../../services/turma.service';
+import {
+  Component,
+  inject,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { TurmaService } from '../../services/turma.service';
+import { Turma } from '../../models/turma';
 
 @Component({
   selector: 'app-lista-turmas',
@@ -9,12 +14,17 @@ import { CommonModule } from '@angular/common';
     CommonModule,
   ],
   templateUrl: './lista-turmas.component.html',
-  styleUrl: './lista-turmas.component.css'
+  styleUrl: './lista-turmas.component.css',
 })
 export class ListaTurmasComponent {
 
   public turmaService = inject(TurmaService);
 
-  public turmas = this.turmaService.getTurmas();
+  public turmas?: Turma[];
+
+  constructor(
+  ) {
+    this.turmaService.turmaSelecionada$;
+  }
 
 }

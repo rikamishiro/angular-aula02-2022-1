@@ -1,8 +1,13 @@
 <nav>
-  <app-lista-turmas></app-lista-turmas>
+  <app-lista-turmas>
+  </app-lista-turmas>
 </nav>
 <main>
-  <app-turma></app-turma>
+  <app-turma
+    *ngIf="(turmaService.turmaSelecionada$ | async) as turma"
+    [turma]="turma"
+  >
+  </app-turma>
 </main>
 
 <router-outlet />
