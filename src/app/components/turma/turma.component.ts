@@ -1,12 +1,19 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  Input,
+} from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 import { Turma } from '../../models/turma';
 
 @Component({
   selector: 'app-turma',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+  ],
   templateUrl: './turma.component.html',
-  styleUrl: './turma.component.css'
+  styleUrl: './turma.component.css',
 })
 export class TurmaComponent {
 
